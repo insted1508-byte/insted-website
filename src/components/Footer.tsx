@@ -11,7 +11,7 @@ export default function Footer() {
           THE END.
         </h2>
         <p className="text-gray-400 text-lg md:text-xl font-light mb-16 max-w-2xl mx-auto">
-          You've reached the bottom of the doom scroll. Step away from the screen, look outside, and reclaim your time.
+          You&apos;ve reached the bottom of the doom scroll. Step away from the screen, look outside, and reclaim your time.
         </p>
         
         <div className="flex flex-wrap justify-center gap-6 md:gap-12 text-xs uppercase tracking-widest text-gray-500 font-semibold mb-16">

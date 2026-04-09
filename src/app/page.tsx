@@ -1,5 +1,4 @@
 import Scrollytelling from "@/components/Scrollytelling";
-import VideoScrollytelling from "@/components/VideoScrollytelling";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
