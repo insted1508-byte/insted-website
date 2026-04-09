@@ -48,7 +48,7 @@ export default function Scrollytelling() {
         };
         // Error handling in case an image fails to load
         img.onerror = () => {
-          console.error(`Failed to load frame ${paddedIndex}`);
+          console.error(`Failed to load frame ${i}`);
           count++;
           setLoadedCount(count);
           if (count === FRAME_COUNT) {

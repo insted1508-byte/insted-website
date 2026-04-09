@@ -2,28 +2,38 @@ import React from 'react';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#030409] py-24 border-t border-white/5 relative overflow-hidden flex flex-col items-center justify-center">
-      {/* Background flare effect */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-red-900/20 blur-[120px] rounded-full pointer-events-none" />
+    <footer className="bg-[#060913] py-20 border-t border-white/5 relative overflow-hidden flex flex-col items-center justify-center">
+      {/* Background glow effect */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#00BEF2]/10 blur-[100px] rounded-full pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-6 text-center relative z-10 w-full">
-        <h2 className="text-5xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-600 mb-8 tracking-tighter">
-          THE END.
-        </h2>
-        <p className="text-gray-400 text-lg md:text-xl font-light mb-16 max-w-2xl mx-auto">
-          You&apos;ve reached the bottom of the doom scroll. Step away from the screen, look outside, and reclaim your time.
-        </p>
-        
-        <div className="flex flex-wrap justify-center gap-6 md:gap-12 text-xs uppercase tracking-widest text-gray-500 font-semibold mb-16">
-          <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-          <a href="#" className="hover:text-white transition-colors">Manifesto</a>
-          <a href="#" className="hover:text-white transition-colors">Contact</a>
+        <div className="flex items-center justify-center gap-2 mb-8">
+           <svg width="24" height="24" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="5" y="15" width="22" height="12" rx="2" fill="#E5E7EB" transform="rotate(-5 5 15)" />
+              <rect x="10" y="10" width="22" height="12" rx="2" fill="#00BEF2" />
+              <rect x="8" y="12" width="22" height="12" rx="2" fill="white" />
+            </svg>
+            <span className="text-white font-bold text-xl tracking-tight">InstEd</span>
         </div>
         
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-600 tracking-wider w-full">
-          <span>&copy; {new Date().getFullYear()} ANTIGRAVITY. STUDIO.</span>
-          <span className="mt-4 md:mt-0">MADE WITH PASSION.</span>
+        <p className="text-gray-400 text-base md:text-lg font-light mb-12 max-w-lg mx-auto leading-relaxed">
+          Interactive and cinematic learning experiences designed for the next generation of curious minds.
+        </p>
+        
+        <div className="flex flex-wrap justify-center gap-8 text-xs uppercase tracking-[0.2em] text-gray-500 font-semibold mb-12">
+          <a href="#" className="hover:text-[#00BEF2] transition-colors">Insights</a>
+          <a href="#" className="hover:text-[#00BEF2] transition-colors">Flicks</a>
+          <a href="#" className="hover:text-[#00BEF2] transition-colors">About Us</a>
+          <a href="#" className="hover:text-[#00BEF2] transition-colors">Privacy</a>
+        </div>
+        
+        <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-600 tracking-widest w-full uppercase">
+          <span>&copy; {new Date().getFullYear()} InstEd Interactive.</span>
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <a href="#" className="hover:text-white transition-colors">Instagram</a>
+            <a href="#" className="hover:text-white transition-colors">Twitter</a>
+            <a href="#" className="hover:text-white transition-colors">LinkedIn</a>
+          </div>
         </div>
       </div>
     </footer>
