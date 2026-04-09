@@ -3,7 +3,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useScroll } from "framer-motion";
 
-const FRAME_COUNT = 174;
+const START_FRAME = 1000;
+const END_FRAME = 1219;
+const FRAME_COUNT = END_FRAME - START_FRAME + 1;
+
 
 export default function Scrollytelling() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -23,10 +26,10 @@ export default function Scrollytelling() {
     const preloadImages = () => {
       const loadedImages: HTMLImageElement[] = [];
       let count = 0;
-      for (let i = 1; i <= FRAME_COUNT; i++) {
+      for (let i = START_FRAME; i <= END_FRAME; i++) {
         const img = new Image();
-        const paddedIndex = i.toString().padStart(3, "0"); // 001, 002, etc.
-        img.src = `/DOOM_SCROLL_images/ezgif-frame-${paddedIndex}.jpg`;
+        img.src = `/DOOM_SCROLL_images/${i}.jpg`;
+
         
         img.onload = () => {
           count++;
@@ -34,8 +37,9 @@ export default function Scrollytelling() {
           if (count === FRAME_COUNT) {
             // Sort to ensure sequential order in the array
             loadedImages.sort((a, b) => {
-              const numA = parseInt(a.src.match(/ezgif-frame-(\d+)/)?.[1] || "0");
-              const numB = parseInt(b.src.match(/ezgif-frame-(\d+)/)?.[1] || "0");
+              const numA = parseInt(a.src.match(/\/(\d+)\.jpg/)?.[1] || "0");
+              const numB = parseInt(b.src.match(/\/(\d+)\.jpg/)?.[1] || "0");
+
               return numA - numB;
             });
             setImages(loadedImages);
@@ -49,8 +53,9 @@ export default function Scrollytelling() {
           setLoadedCount(count);
           if (count === FRAME_COUNT) {
             loadedImages.sort((a, b) => {
-              const numA = parseInt(a.src.match(/ezgif-frame-(\d+)/)?.[1] || "0");
-              const numB = parseInt(b.src.match(/ezgif-frame-(\d+)/)?.[1] || "0");
+              const numA = parseInt(a.src.match(/\/(\d+)\.jpg/)?.[1] || "0");
+              const numB = parseInt(b.src.match(/\/(\d+)\.jpg/)?.[1] || "0");
+
               return numA - numB;
             });
             setImages(loadedImages);
