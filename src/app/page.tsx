@@ -2,7 +2,6 @@ import Scrollytelling from "@/components/Scrollytelling";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ImagesScrollingAnimation } from "@/components/ui/images-scrolling-animation";
-import FloatingLaptopsSection from "@/components/ui/FloatingLaptopsSection";
 
 export default function Home() {
   return (
@@ -10,7 +9,6 @@ export default function Home() {
       <Header />
       <Scrollytelling />
       <ImagesScrollingAnimation />
-      <FloatingLaptopsSection />
       {/* <VideoScrollytelling /> */}
       <Footer />
     </main>

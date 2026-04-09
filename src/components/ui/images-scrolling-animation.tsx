@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, MotionValue, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { ReactLenis } from "lenis/react"
 import { useRef } from "react"
 
