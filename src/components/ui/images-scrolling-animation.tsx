@@ -1,8 +1,9 @@
 "use client"
 
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion, useScroll, useTransform, type MotionValue } from "framer-motion"
 import { ReactLenis } from "lenis/react"
 import { useRef } from "react"
+import Image from "next/image"
 
 const projects = [
   {
@@ -38,7 +39,7 @@ const StickyCard_001 = ({
   i: number
   title: string
   src: string
-  progress: any
+  progress: MotionValue<number>
   range: [number, number]
   targetScale: number
 }) => {
@@ -63,7 +64,13 @@ const StickyCard_001 = ({
            <span className="text-white/50 text-xs font-mono tracking-widest uppercase mb-2">Module 0{i + 1}</span>
            <h3 className="text-white text-2xl sm:text-3xl font-bold tracking-tight">{title}</h3>
         </div>
-        <img src={src || "/placeholder.svg"} alt={title} className="h-full w-full object-cover transition-transform duration-700 hover:scale-105" />
+        <Image 
+          src={src || "/placeholder.svg"} 
+          alt={title} 
+          fill
+          className="object-cover transition-transform duration-700 hover:scale-105" 
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        />
       </motion.div>
     </div>
   )
